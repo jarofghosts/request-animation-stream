@@ -11,6 +11,9 @@ streaming interface to `requestAnimationFrame`
 var requestAnimationStream = require('request-animation-stream')
 
 dataSource.pipe(requestAnimationStream()).pipe(viewLayer)
+
+// as dataSource streams, only the latest data (if any) will be emitted on
+// animation frame.
 ```
 
 ## API
