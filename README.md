@@ -1,5 +1,8 @@
 # request-animation-stream
 
+[![Build Status](http://img.shields.io/travis/jarofghosts/request-animation-stream.svg?style=flat)](https://travis-ci.org/jarofghosts/request-animation-stream)
+[![npm install](http://img.shields.io/npm/dm/request-animation-stream.svg?style=flat)](https://www.npmjs.org/package/request-animation-stream)
+
 streaming interface to `requestAnimationFrame`
 
 ## usage
