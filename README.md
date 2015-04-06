@@ -18,7 +18,7 @@ dataSource.pipe(requestAnimationStream()).pipe(viewLayer)
 
 ## API
 
-### `requestAnimationStream(_flush) -> DuplexStream`
+### `requestAnimationStream(_flush, _alwaysEmit) -> DuplexStream`
 
 * `_flush` is an optional argument that determines if any buffered data will be
   emitted if the stream is ended before the next frame.
