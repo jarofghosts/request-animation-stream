@@ -1,6 +1,6 @@
 {
   "name": "request-animation-stream",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "sliding buffer streaming interface to rAF",
   "main": "index.js",
   "scripts": {
