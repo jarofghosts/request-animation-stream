@@ -77,3 +77,22 @@ test('flush option writes any buffered, unwritten data on end', function(t) {
   stream.write('flush!')
   stream.end()
 })
+
+test('emits after raf callback even with no update', function(t) {
+  t.plan(2)
+
+  var rAS = proxyquire('../', {raf: asyncRaf})
+
+  var stream = rAS(true, true)
+
+  stream.once('data', function(data) {
+    t.equal(data, 'yay')
+
+    stream.once('data', function(data) {
+      t.equal(data, 'yay')
+      stream.end()
+    })
+  })
+
+  stream.write('yay')
+})
