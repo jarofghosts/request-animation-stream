@@ -96,3 +96,20 @@ test('emits after raf callback even with no update', function(t) {
 
   stream.write('yay')
 })
+
+test('does not choke on emitting with no initial data', function(t) {
+  t.plan(2)
+
+  var rAS = proxyquire('../', {raf: asyncRaf})
+
+  var stream = rAS(true, true)
+
+  stream.once('data', function(data) {
+    t.equal(data, undefined)
+
+    stream.once('data', function(data) {
+      t.equal(data, undefined)
+      stream.end()
+    })
+  })
+})

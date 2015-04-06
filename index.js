@@ -4,13 +4,14 @@ var through = require('through')
 module.exports = requestAnimationStream
 
 function requestAnimationStream(flush, _alwaysEmit) {
-  var lastValue = null
   var stream = through(write, end)
   var handler = raf(onFrame)
 
   var queued = false
   var ended = false
   var alwaysEmit = _alwaysEmit || false
+
+  var lastValue
 
   return stream
 

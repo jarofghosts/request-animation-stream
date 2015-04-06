@@ -24,7 +24,8 @@ dataSource.pipe(requestAnimationStream()).pipe(viewLayer)
   emitted if the stream is ended before the next frame.
 
 * `_alwaysEmit` is an optional argument that determines if the stream will emit
-  every frame, even if no new data (most recent data will be emitted.)
+  every frame, even if no new data (most recent data will be emitted. If no data
+  has been captured, `undefined` will be emitted).
 
 ## license
 
